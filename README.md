@@ -15,7 +15,7 @@ Um beat 'em up desenvolvido como teste técnico.
 
 ## 🔧 Tecnologias  
 - Desenvolvido em **Unity**.
-- Versão  Unity 6 6000.0.25f1**.
+- Versão  Unity 6 6000.0.25f1.
 
 ## 📌 Status  
 Projeto em desenvolvimento para teste técnico.  
