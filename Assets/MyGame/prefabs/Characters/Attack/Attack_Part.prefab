@@ -57,7 +57,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   attackHit:
-  - {fileID: 8300000, guid: 5ae5d2f194fe1354889bfb5b13153b55, type: 3}
+  - {fileID: 8300000, guid: 85bb7415567fa5f4ba047a249556f059, type: 3}
   attackSound: {fileID: 8609193887318749763}
 --- !u!135 &3929242613572161572
 SphereCollider:
@@ -93,7 +93,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0

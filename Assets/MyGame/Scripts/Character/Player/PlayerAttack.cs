@@ -6,6 +6,7 @@ public class PlayerAttack : AttackBase
     [Header("Special Attack")]
     [SerializeField] private PlayerEnergiy playerEnergiy;
     [SerializeField] Projectile prefabAttackSpecial;
+    [SerializeField] Transform  positionSpecialSpawn;
     [SerializeField] float valueForAtatckSpecial = 1f;
     [SerializeField] float specialReady = 1f;
     [SerializeField] float specialFairing = 0;
@@ -54,34 +55,54 @@ public class PlayerAttack : AttackBase
         specialFairing = 0;
         isHoldingSpecial = true;
 
+        m_animator.Play("AttackChange");
+        m_animator.SetBool("SpecialActive", isHoldingSpecial);
+        OS_PlayerInGame.AtiveAttackSpecial(isHoldingSpecial);
     }
     public void SpecialFairing()
     {
         if (!isHoldingSpecial) return;
 
-        specialFairing = Mathf.Clamp(specialFairing + Time.deltaTime, 0f, specialReady);
+
+        if (m_states.currentEnergy > valueForAtatckSpecial)
+        {
+            specialFairing = Mathf.Clamp(specialFairing + Time.deltaTime, 0f, specialReady);
+        }
+        else
+        {
+            specialFairing = 0f;
+        }
+     
+        m_animator.SetFloat("SpeccialChange", specialFairing);
+        OS_PlayerInGame.ChangeAttackSpecial(specialFairing);
+
 
     }
     public void SpecialEnd()
     {
         isHoldingSpecial = false;
-
+        m_animator.SetBool("SpecialActive", isHoldingSpecial);
+        OS_PlayerInGame.AtiveAttackSpecial(false);
+    }
+    public override void AttackSpecial()
+    {
+      
         if (m_states.currentEnergy < valueForAtatckSpecial) return;
 
         if (specialFairing.Equals(specialReady))
         {
-            AttackSpecial();
+             
+            playerEnergiy.RemoveValue(valueForAtatckSpecial);
+            Projectile projectile = Instantiate<Projectile>(prefabAttackSpecial);
+            projectile.SetUpDirection(positionSpecialSpawn,transform.forward);
+
         }
         else
         {
             specialFairing = 0;
         }
-    }
-    public void AttackSpecial()
-    {
-        if (m_states.currentEnergy < valueForAtatckSpecial) return;
 
-        playerEnergiy.RemoveValue(valueForAtatckSpecial);
+      
     }
     public override void ReadyAttack()
     {

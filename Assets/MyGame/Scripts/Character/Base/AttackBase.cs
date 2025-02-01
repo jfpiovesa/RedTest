@@ -22,6 +22,8 @@ public class AttackBase : MonoBehaviour
 
     public virtual void ResetAttack() { }
 
+    public virtual void AttackSpecial() { }
+
 
 
 }

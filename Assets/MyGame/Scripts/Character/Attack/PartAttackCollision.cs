@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Timeline;
 
 public class PartAttackCollision : MonoBehaviour
 {
@@ -29,30 +28,40 @@ public class PartAttackCollision : MonoBehaviour
             Vector3 knockDir = (enemy.transform.position - transform.position).normalized;
 
             damage.knockDirection = knockDir;
-            TakeDamage(enemy.gameObject);
+            TakeDamage(enemy.gameObject, hitPoint);
         }
     }
-    public void TakeDamage(GameObject charcterValue)
+    public void TakeDamage(GameObject charcterValue, Vector3 position)
     {
-         enableDamage = false;
+        enableDamage = false;
 
         if (charcterValue == null) return;
 
-     
+
         I_DamageTake<DamageData> damageTake = charcterValue.GetComponent<I_DamageTake<DamageData>>();
 
         if (damageTake == null) return;
 
+        Effect(position);
         AudioPlayt();
 
         damageTake.ApplyDamage(damage);
+
+    }
+    public void Effect(Vector3 position)
+    {
+        if (damage.effectPrefab == null) return;
+
+        GameObject effect = Instantiate(damage.effectPrefab);
+        effect.transform.position = position;
+
 
     }
     public void AudioPlayt()
     {
         attackSound.clip = attackHit[Random.Range(0, attackHit.Length)];
         attackSound.Play();
-        
+
     }
     public void EnableDamage()
     {

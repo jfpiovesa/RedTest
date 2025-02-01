@@ -25,7 +25,7 @@ public class ManagerInScene : MonoBehaviour
 
     void ActionSpawn(PlayerControler playerControler)
     {
-        ApplicationManager.instance.uI_FadeTransition.PlayAnimationFinish("Fad_Out", () => playerControler.StopActions(false));
+        ApplicationManager.Instance .uI_FadeTransition.PlayAnimationFinish("Fad_Out", () => playerControler.StopActions(false));
     }
 
 }

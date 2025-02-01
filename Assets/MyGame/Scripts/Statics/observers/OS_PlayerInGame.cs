@@ -9,7 +9,8 @@ public static class OS_PlayerInGame
 
     public static Action<float> A_healthChange { get; set; }
     public static Action<float> A_SpecialChange { get; set; }
-
+    public static Action<bool> A_ActiveAttackSpecial { get; set; }
+    public static Action<float> A_ChangeAttackSpecial { get; set; }
     public static Action A_deathPlayer { get; set; }
 
 
@@ -27,6 +28,15 @@ public static class OS_PlayerInGame
     {
         A_SpecialChange?.Invoke(value);
     }
+    public static void AtiveAttackSpecial(bool value)
+    {
+        A_ActiveAttackSpecial?.Invoke(value);
+    }
+    public static void ChangeAttackSpecial(float value)
+    {
+        A_ChangeAttackSpecial?.Invoke(value);
+    }
+
     public static void DeathPlayer()
     {
         A_deathPlayer?.Invoke();

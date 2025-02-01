@@ -288,7 +288,6 @@ MonoBehaviour:
   nameCharacter: Dummy
   icone: {fileID: 0}
   stateHealth: 0
-  stateAction: 0
   statePerformace: 0
   isGround: 0
   isFalling: 0
@@ -384,7 +383,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

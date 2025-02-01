@@ -39,7 +39,7 @@ public class ActionAnimationsDisplay : MonoBehaviour
             part.DisableDamage();
         }
     }
-
+   
     public void ReadyAttack()
     {
         attackBase?.ReadyAttack();
@@ -51,5 +51,10 @@ public class ActionAnimationsDisplay : MonoBehaviour
     public void  EffectSound(string name)
     {
         soundsEffectsCharacter.PlaySound(name);
+    }
+
+    public void ProjectilAttack()
+    {
+        attackBase.AttackSpecial();
     }
 }
