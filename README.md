@@ -1,22 +1,20 @@
-# RedTest
- Teste pratico beat'm up
+# Red Test 🎮  
+Um beat 'em up desenvolvido como teste técnico.  
 
- Red Test 🎮
-Um beat 'em up desenvolvido como teste técnico.
+## 🎮 Controles  
 
-🎮 Controles
-Teclado:
+**Teclado:**  
+- Movimento: `WASD`  
+- Ataque: `Botão esquerdo do mouse` ou `X`  
+- Especial: `Segurar Espaço` → Soltar para ativar  
 
-Movimento: WASD
-Ataque: Botão esquerdo do mouse ou X
-Especial: Segurar Espaço → Soltar para ativar
-Controle:
+**Controle:**  
+- Movimento: `Analógico esquerdo`  
+- Ataque: `Botão X / Quadrado`  
+- Especial: `Segurar Y / Triângulo` → Soltar para ativar  
 
-Movimento: Analógico esquerdo
-Ataque: Botão X / Quadrado
-Especial: Segurar Y / Triângulo → Soltar para ativar
-🔧 Tecnologias
-Desenvolvido em Unity.
+## 🔧 Tecnologias  
+Desenvolvido em **Unity**.  
 
-📌 Status
-Projeto em desenvolvimento para teste técnico.
+## 📌 Status  
+Projeto em desenvolvimento para teste técnico.  
