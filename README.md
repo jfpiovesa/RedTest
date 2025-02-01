@@ -14,8 +14,8 @@ Um beat 'em up desenvolvido como teste técnico.
 - Especial: `Segurar Y / Triângulo` → Soltar para ativar  
 
 ## 🔧 Tecnologias  
-Desenvolvido em **Unity**.
-Versao **Unity 6 6000.0.25f1**.
+- Desenvolvido em **Unity**.
+- Versão  Unity 6 6000.0.25f1**.
 
 ## 📌 Status  
 Projeto em desenvolvimento para teste técnico.  
